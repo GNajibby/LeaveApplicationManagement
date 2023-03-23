@@ -1,0 +1,88 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="Login.css">
+  <script src="js/Login.js"></script>
+</head>
+
+<body>
+
+
+  <div class="topnav">
+    <a class="active" href="Login.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">LogIn</button>
+      <div class="dropdown-content">
+        <a href="login.html">Staff</a>
+        <a href="login.html">Manager</a>
+        <a href="login.html">Admin</a>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <h1>Welcome to Leave Application Management System</h1>
+  <div class="animation"></div>
+  <table style="width:100%">
+    <tr>
+      <td style="width:70%">
+        <img src="work.jpg" width="100%">
+      </td>
+      <td style="width:28%">
+        <div id="box">
+          <table class="tbl" align="center">
+            <div class="imgcontainer">
+              <img src="man.png" alt="Avatar" class="Avatar">
+            </div>
+            <form name="login" align="center">
+
+              <tr>
+                <td><input type="text" name="UName" size="" placeholder="Enter Username or ID"></td>
+              </tr>
+              <tr>
+                <td><input type="password" name="Pass" size="" placeholder="Enter Password"></td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" checked="checked" name="remmber">remember me
+                </td>
+              </tr>
+
+              <td align="left" colspan="2"><INPUT type="button" value="Login" id="submit" onclick="check(this.form)">
+                <INPUT NAME="Reset" TYPE="Reset" VALUE="Reset">
+              </td>
+
+              <tr><td><b>Note: For this demo use this username and password</b></td></tr>
+              <tr><td>staff = Jason123 (UTM123)</td></tr>
+              <tr><td>Admin = Faruq123 (UTM456)</td></tr>
+              <tr><td>Manager = Aiman123 (UTM789)</td></tr>
+            </form>
+          </table>
+
+          <script language="javascript">
+            function check(form) {
+              if (form.UName.value == "Jason123" && form.Pass.value == "UTM123") {//staff
+                window.open('StaffMenu.html')
+              }
+              else if(form.UName.value == "Faruq123" && form.Pass.value == "UTM456"){
+                window.open('AdminMenu.html')
+              }
+              else if(form.UName.value == "Aiman123" && form.Pass.value == "UTM789"){
+                window.open('ManagerMenu.html')
+              }
+              else {
+                alert("Error Password or Username")
+              }
+            }
+          </script>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+
+
+
+</body>
+
+</html>

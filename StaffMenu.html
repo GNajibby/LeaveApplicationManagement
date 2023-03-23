@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="StaffMenu.css">
+  
+</head>
+
+<body>
+
+  <div class="sidenav">
+    <a href="userprofile.html">Profile</a>
+		<a href="StaffMenu.html">Dashboard</a>
+		<a href="menu.html">Log Out</a>
+		<button class="dropdown-btn">Leave 
+				<i class="fa fa-caret-down"></i>
+			  </button>
+			  <div class="dropdown-container">
+				<a href="Form.html">Apply Leave</a>
+				<a href="applicationhistory.php" action = "applicationhistory.php">Application History</a>
+			  </div>
+		<a href="">Visit Us</a>
+	  </div>
+
+  <div class="main">
+    <div class="top">
+      <h2>Staff Menu</h2>
+    </div>
+  </div>
+
+  <script type = "text/javascript">
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+      });
+    }
+    </script>
+     <div class="topnav">
+      <a class="active" href="menu.html"><img src="LOGO.jpg"></a>
+    </div>
+
+</body>
+
+</html>

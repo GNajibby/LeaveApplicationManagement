@@ -1,0 +1,216 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="form.css">
+	<script type="text/javascript">
+		function GetDays() {
+			var edt = new Date(document.getElementById("e_date").value);
+			var sdt = new Date(document.getElementById("s_date").value);
+			return parseInt((edt - sdt) / (24 * 3600 * 1000));
+		}
+
+		function cal() {
+			if (document.getElementById("e_date")) {
+				document.getElementById("numdays2").value = GetDays();
+			}
+		}
+
+		function validateLeaveForm() {
+			var a = document.forms["applyleave"]["FName"].value;
+			if (a == "" || a == null) {
+				alert("First Name must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["LName"].value;
+			if (a == "" || a == null) {
+				alert("Last Name must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["email"].value;
+			if (a == "" || a == null) {
+				alert("Email must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["nric"].value;
+			if (a == "" || a == null) {
+				alert("NRIC must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["s_date"].value;
+			if (a == "" || a == null) {
+				alert("Start Leave Date must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["e_date"].value;
+			if (a == "" || a == null) {
+				alert("End Leave Date must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["department"].value;
+			if (a == "" || a == null) {
+				alert("Department must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["numdays"].value;
+			if (a == "" || a == null) {
+				alert("Number of Days must be filled out");
+				return false;
+			}
+
+			var a = document.forms["applyleave"]["reason"].value;
+			if (a == "" || a == null) {
+				alert("Reason must be filled out");
+				return false;
+			}
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<br>
+	<div class="sidenav">
+		<a href="StaffMenu.html">Dashboard</a>
+		<a href="menu.html">Log Out</a>
+		<button class="dropdown-btn">Leave
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="Form.html">Apply Leave</a>
+			<a href="applicationhistory.html">Application History</a>
+		</div>
+		<a href="">Visit Us</a>
+	</div>
+
+	</div>
+	<div class="main">
+		<div class="top">
+			<h2>Leave Application</h2>
+		</div>
+		<br><br>
+		<div id="box">
+			<h2 class="fom">Staff Form</h2><br><br>
+			<table class="najib" style="width:100%">
+				<form name="applyleave" onsubmit="return validateLeaveForm()" action = "form_insert.php" method="post" required>
+					<tr>
+						<td style="width:50%">First Name</td>
+						<td>Last Name</td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="F_name" size="" placeholder="First Name"></td>
+						<td><input type="text" name="L_name" size="" placeholder="Last Name"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td>Email Address</td>
+						<td>NRIC</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="email" size="" placeholder="Email Address"></td>
+						<td><input type="text" name="nric" size="" placeholder="NRIC"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td>Start Leave Date</td>
+						<td>End Leave Date</td>
+					</tr>
+					<tr>
+						<td><input type="date" id="s_date" name="s_date" onchange="cal()" size=""
+								placeholder="Email Address"></td>
+						<td><input type="date" id="e_date" name="e_date" onchange="cal()" size="">
+						</td>
+					</tr>
+					<tr>
+						<td>Department</td>
+						<td>Number of Days</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="department" size="" placeholder="Department"></td>
+						<td><input type="text" id="numdays2" name="numdays" size="" placeholder="No of Days"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td>Leave Type</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<Select Name="leavetype">
+								<Option value="Annual"> Annual</option>
+								<Option value="Medical"> Medical</option>
+								<Option value="Maternity/Paternity"> Maternity/Paternity</option>
+								<Option value="Military/Reservist"> Military/Reservist</option>
+								<Option value="Compassionate"> Compassionate</option>
+								<Option value="Unpaid"> Unpaid</option>
+								<Option value="Others"> Others</option>
+						</td>
+						</Select>
+						</td>
+					</tr>
+					<tr>
+						<td>Reason For Leave</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<textarea type="text" name="reason" rows="5" col="100"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="submit" value="Apply" class="app"></td>
+						<script>
+							function succeed() { alert("Your application is being prosessed, Thank you!"); }
+						</script>
+						<td><input NAME="Reset" TYPE="reset" VALUE="Reset" class="res"></td>
+					</tr>
+
+				</form>
+				</table>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var dropdown = document.getElementsByClassName("dropdown-btn");
+		var i;
+
+		for (i = 0; i < dropdown.length; i++) {
+			dropdown[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var dropdownContent = this.nextElementSibling;
+				if (dropdownContent.style.display === "block") {
+					dropdownContent.style.display = "none";
+				} else {
+					dropdownContent.style.display = "block";
+				}
+			});
+		}
+	</script>
+	<div class="topnav">
+		<a class="active" href="StaffMenu.html"><img src="LOGO.jpg"></a>
+	</div>
+
+</body>
+
+</html>

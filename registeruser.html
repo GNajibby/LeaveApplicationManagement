@@ -1,0 +1,150 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="adminmenu.css">
+    <script type="text/javascript">
+
+		function validateRegisterForm() {
+			var a = document.forms["registration"]["FName"].value;
+			if (a == "" || a == null) {
+				alert("First Name must be filled out");
+				return false;
+			}
+
+			var a = document.forms["registration"]["LName"].value;
+			if (a == "" || a == null) {
+				alert("Last Name must be filled out");
+				return false;
+			}
+
+			var a = document.forms["registration"]["email"].value;
+			if (a == "" || a == null) {
+				alert("Email must be filled out");
+				return false;
+			}
+
+			var a = document.forms["registration"]["nric"].value;
+			if (a == "" || a == null) {
+				alert("NRIC must be filled out");
+				return false;
+			}
+            
+			var a = document.forms["registration"]["username"].value;
+			if (a == "" || a == null) {
+				alert("Username must be filled out");
+				return false;
+			}
+
+			var a = document.forms["registration"]["password1"].value;
+			if (a == "" || a == null) {
+				alert("Password Leave Date must be filled out");
+				return false;
+			}
+
+			var a = document.forms["registration"]["password2"].value;
+			if (a == "" || a == null) {
+				alert("Confirm Password must be filled out");
+				return false;
+			}
+
+			var a = document.forms["registration"]["password1"].value;
+            var b = document.forms["registration"]["password2"].value;
+			if (a !== b) {
+				alert("Wrong password confirmation");
+				return false;
+			}
+
+			
+		}
+
+	</script>
+</head>
+
+<body>
+
+    <div class="sidenav">
+
+        <a href="registeruser.html">Register user</a>
+        <a href="#">Edit User Information</a>
+        <a href="#">Delete User Information</a>
+
+    </div>
+
+
+    <div class="main">
+        <div class="top">
+            <h2>Register User</h2>
+        </div>
+        <br>
+        <div id="box">
+            <table style="width:100%">
+				<form name="registration" onsubmit="return validateRegisterForm()" action = "insert_user.php" method="post" required>
+					<tr>
+						<td style="width:50%">First Name</td>
+						<td>Last Name</td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="F_name" size="" placeholder="First Name"></td>
+						<td><input type="text" name="L_name" size="" placeholder="Last Name"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td>Email Address</td>
+						<td>NRIC</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="email" size="" placeholder="Email Address"></td>
+						<td><input type="text" name="nric" size="" placeholder="NRIC"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td>Username</td>
+						<td>Password</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="username" size="" placeholder="username"></td>
+						<td><input type="password" name="password1" size="" placeholder="Password"></td>
+					</tr>
+                    <tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td>Confirm Password</td>
+					</tr>
+					<tr>
+						<td><input type="password" name="password2" size="" placeholder="Re-enter Password"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+				
+					
+
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="submit" value="Register" class="app"></td>
+						<script>
+							function succeed() { alert("Registration is being prosessed, Thank you!"); }
+						</script>
+						<td><input NAME="Reset" TYPE="reset" VALUE="Reset" class="res"></td>
+					</tr>
+
+				</form>
+				</table>
+        </div>
+    </div>
+
+    <div class="topnav">
+        <a class="active" href="AdminMenu.html"><img src="LOGO.jpg"></a>
+
+    </div>
+</body>
+
+</html>

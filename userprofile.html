@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+  
+    <link rel="stylesheet" href="userprofile.css">
+
+</head>
+<body>
+
+    <div class="topnav">
+		 <a class="active" href="StaffMenu.html"><img src="LOGO.jpg"></a>
+        <div class="title">
+            <h1>Profile</h1>
+        </div>
+    </div>
+
+
+    <div class="sidenav">
+		<a href="StaffMenu.html">Dashboard</a>
+		<a href="menu.html">Log Out</a>
+		<button class="dropdown-btn">Leave 
+				<i class="fa fa-caret-down"></i>
+			  </button>
+			  <div class="dropdown-container">
+				<a href="Form.html">Apply Leave</a>
+				<a href="applicationhistory.html">Application History</a>
+			  </div>
+		<a href="">Visit Us</a>
+	  </div>
+
+
+   
+    <div class="main">
+        <h2>IDENTITY</h2>
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit"></i>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>:</td>
+                            <td>Muhammad Aiman Mahyuddin</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>AimanMahyud@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>NRIC</td>
+                            <td>:</td>
+                            <td>010213141301</td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td>:</td>
+                            <td>Aiman123</td>
+                        </tr>
+						<th align = "right" colspan = "2"><INPUT NAME="Edit" TYPE="button" VALUE="Edit"></th>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+       
+    </div>
+
+    <script type = "text/javascript">
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+          });
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(190, 189, 201)    ;
+    color: rgb(79, 79, 79);
+}
+
+.topnav{
+    color: white;
+    background-color: rgb(54, 52, 89);
+    padding: 14px 16px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 75;
+    left: 0;
+    background-color: rgb(54, 53, 81);
+    overflow-x: hidden;
+    padding-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding-top: 10px ;
+    padding-bottom: 10px ;
+    padding-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(226, 220, 220);
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover {
+    color: #f1f1f1;
+    font-size: 21px;
+  
+  }
+   .dropdown-btn:hover {
+    color: #f1f1f1;
+    background-color: rgb(23, 22, 43);
+    border-radius: 20px;
+    font-size: 21px;
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+
+  .top{
+    margin-top:100px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none ;
+    border-radius: 10px;
+    width: 98%;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 1px 1px 10px 1px rgba(166, 165, 165, 0.256);
+    font-size: 17px;
+  }  
